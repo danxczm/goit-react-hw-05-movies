@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 import { searchMoviesAxios } from 'api/fetchData';
 import { useState, useEffect } from 'react';
-import Searchbar from '../components/Searchbar';
+import Searchbar from '../../components/Searchbar/Searchbar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

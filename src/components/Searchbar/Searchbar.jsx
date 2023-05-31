@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types';
+import css from './SearchBar.module.css';
 
 const Searchbar = ({ onChange, onSubmit, query }) => {
   return (
     <form onSubmit={onSubmit}>
       <input
+        className={css.input}
         onChange={e => onChange(e.target.value)}
         type="text"
         name="query"
         value={query}
       />
-      <button type="submit">Search</button>
+      <button className={css.button} type="submit">
+        Search
+      </button>
     </form>
   );
 };

@@ -1,6 +1,8 @@
 import { getMovieCastAxios } from 'api/fetchData';
 import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
+import css from './Cast.module.css';
+
 const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState(null);
@@ -12,21 +14,20 @@ const Cast = () => {
 
   return (
     cast && (
-      <ul>
+      <ul className={css.list}>
         {cast.map(({ id, original_name, character, profile_path }) => (
-          <li key={id}>
+          <li className={css.item} key={id}>
             <img
+              className={css.img}
               src={
                 profile_path
                   ? `https://image.tmdb.org/t/p/w300/${profile_path}`
                   : defaultImg
               }
-              width={200}
-              height={300}
               alt={original_name}
             />
-            <p>{original_name}</p>
-            <p>Character: {character}</p>
+            <p className={css.name}>{original_name}</p>
+            <p className={css.character}>Character: {character}</p>
           </li>
         ))}
       </ul>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { getTrendingAxios } from 'api/fetchData';
 import MovieList from 'components/MovieList/MovieList';
+import css from './Home.module.css';
+
 const Home = () => {
   const [movies, setMovies] = useState(null);
 
@@ -12,7 +14,7 @@ const Home = () => {
 
   return (
     <main>
-      <h1>Trending Movies</h1>
+      <h1 className={css.title}>Trending Movies</h1>
       {movies && <MovieList movies={movies} />}
     </main>
   );
